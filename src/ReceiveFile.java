@@ -187,8 +187,9 @@ public class ReceiveFile extends HttpServlet {
 					obj.put("PhoneNumber", jsonObj.get("PhoneNumber").getAsString());
 					obj.put("Sex", jsonObj.get("Sex").getAsString());
 					obj.put("Identify", jsonObj.get("Identify").getAsString());
-					obj.put("CarType", jsonObj.get("CarType"));
-					obj.put("CarNumber", jsonObj.get("CarNumber"));
+					obj.put("CarType", jsonObj.get("CarType").getAsString());
+					obj.put("CarNumber", jsonObj.get("CarNumber").getAsString());
+					System.out.println(jsonObj.get("CarType").getAsString()+ "　"+ jsonObj.get("CarNumber").getAsString());
 					obj.put("ID", jsonObj.get("ID").getAsString());
 					obj.put("Email", jsonObj.get("Email").getAsString());
 					obj.put("Account", jsonObj.get("Account").getAsString());
@@ -204,8 +205,8 @@ public class ReceiveFile extends HttpServlet {
 					obj.put("FirstName", jsonObj.get("FirstName").getAsString());
 					obj.put("LastName", jsonObj.get("LastName").getAsString());
 					obj.put("PhoneNumber", jsonObj.get("PhoneNumber").getAsString());
-					obj.put("CarType", jsonObj.get("CarType"));
-					obj.put("CarNumber", jsonObj.get("CarNumber"));
+					obj.put("CarType", jsonObj.get("CarType").getAsString());
+					obj.put("CarNumber", jsonObj.get("CarNumber").getAsString());
 					obj.put("Identify", jsonObj.get("Identify").getAsString());
 					obj.put("ID", jsonObj.get("ID").getAsString());
 					obj.put("Sex", jsonObj.get("Sex").getAsString());
@@ -235,7 +236,10 @@ public class ReceiveFile extends HttpServlet {
 						obj.put("Score", jsonObj.get("Score").getAsString());
 						obj.put("Sex", jsonObj.get("Sex").getAsString());
 						obj.put("Now", jsonObj.get("Now").getAsString());
+						System.out.println(obj);
+						System.out.println(jsonObj.get("Identify").getAsString() +jsonObj.get("CarType").getAsString() + jsonObj.get("CarNumber").getAsString());
 						if (jsonObj.get("Identify").getAsString().equals("passenger")) {
+							System.out.println(jsonObj.get("Identify").getAsString() +jsonObj.get("CarType").getAsString() + jsonObj.get("CarNumber").getAsString());
 							if (jsonObj.get("CarType").getAsString().equals("")
 									|| jsonObj.get("CarNumber").getAsString().equals("")) {
 								Stat = "NoCar";
@@ -425,11 +429,11 @@ public class ReceiveFile extends HttpServlet {
 						obj.put("FirstName", get.get("FirstName").getAsString());
 						obj.put("Sex", get.get("Sex").getAsString());
 						obj.put("LastName", get.get("LastName").getAsString());
-						obj.put("CarType", get.get("CarType"));
-						obj.put("CarNumber", get.get("CarNumber"));
+						obj.put("CarType", get.get("CarType").getAsString());
+						obj.put("CarNumber", get.get("CarNumber").getAsString());
 						obj.put("ID", get.get("ID").getAsString());
 						obj.put("Identify", get.get("Identify").getAsString());
-						obj.put("Now", "Nocar");
+						obj.put("Now", "NoCar");
 						obj.put("PhoneNumber", get.get("PhoneNumber").getAsString());
 						System.out.println(obj.toString());
 						fi.write(obj.toString());
@@ -470,11 +474,11 @@ public class ReceiveFile extends HttpServlet {
 					obj.put("FirstName", get.get("FirstName").getAsString());
 					obj.put("LastName", get.get("LastName").getAsString());
 					obj.put("Sex", get.get("Sex").getAsString());
-					obj.put("CarType", get.get("CarType"));
-					obj.put("CarNumber", get.get("CarNumber"));
+					obj.put("CarType", get.get("CarType").getAsString());
+					obj.put("CarNumber", get.get("CarNumber").getAsString());
 					obj.put("ID", get.get("ID").getAsString());
 					obj.put("Identify", get.get("Identify").getAsString());
-					obj.put("Now", "Nocar");
+					obj.put("Now", "NoCar");
 					obj.put("PhoneNumber", get.get("PhoneNumber").getAsString());
 					fi.write(obj.toString());
 					fi.flush();
